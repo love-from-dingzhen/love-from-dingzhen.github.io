@@ -1,51 +1,42 @@
-/* global NexT, CONFIG, Pjax */
+window.addEventListener("pjax:success", () => {
+  _$$("script[data-pjax]").forEach((element) => {
+    const { textContent, parentNode, id, className, type, src, dataset, onload } =
+      element;
+    const code = textContent || "";
+    const script = document.createElement("script");
 
-const pjax = new Pjax({
-  selectors: [
-    'head title',
-    'meta[property="og:title"]',
-    'script[type="application/json"]',
-    // Precede .main-inner to prevent placeholder TOC changes asap
-    '.post-toc-wrap',
-    '.main-inner',
-    '.languages',
-    '.pjax'
-  ],
-  switches: {
-    '.post-toc-wrap'(oldWrap, newWrap) {
-      if (newWrap.querySelector('.post-toc')) {
-        Pjax.switches.outerHTML.call(this, oldWrap, newWrap);
-      } else {
-        const curTOC = oldWrap.querySelector('.post-toc');
-        if (curTOC) {
-          curTOC.classList.add('placeholder-toc');
-        }
-        this.onSwitch();
-      }
+    id && (script.id = id);
+    className && (script.className = className);
+    type && (script.type = type);
+    dataset.pjax !== undefined && (script.dataset.pjax = "");
+    onload && (script.onload = onload);
+
+    if (src) {
+      script.src = src;
+      script.async = false; // Force synchronous loading of peripheral JS
+    } else if (code) {
+      script.textContent = code;
     }
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
+    parentNode.replaceChild(script, element);
+  });
 });
-
-document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax]'));
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      // Add sidebar-post-related transition.
-      .add(NexT.motion.middleWares.sidebar)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
+window.addEventListener("pjax:complete", () => {
+  _$("#header-nav")?.classList.remove("header-nav-hidden");
+  const mode = window.localStorage.getItem("dark_mode");
+  if (mode == "true") {
+    document.body.dispatchEvent(new CustomEvent("dark-theme-set"));
+  } else if (mode == "false") {
+    document.body.dispatchEvent(new CustomEvent("light-theme-set"));
   }
-  if (CONFIG.sidebar.display !== 'remove') {
-    const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
-    document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-    NexT.utils.activateSidebarPanel(hasTOC ? 0 : 1);
-    NexT.utils.updateSidebarPosition();
+  // destroy waline
+  if(window.walineInstance) {
+    window.walineInstance.destroy();
+    window.walineInstance = null;
   }
 });
+window.addEventListener("pjax:send", () => {
+  window.lightboxStatus = "loading";
+});
+if (window.startLoading) window.addEventListener("pjax:send", startLoading);
+if (window.endLoading) window.addEventListener("pjax:complete", endLoading);
+if (window.aosInit) window.addEventListener("pjax:success", aosInit);
