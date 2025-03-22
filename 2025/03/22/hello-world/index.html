@@ -17,7 +17,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://example.com';</script>
   
   <title>
-    量子场论第一讲 |
+    量子场论第一讲(删改中) |
     
     欢迎来到！我的思维殿堂！
   </title>
@@ -32,15 +32,15 @@
 
   
   
-    <meta name="description" content="哥们开始写QFT的第一篇笔记  自然单位制 在自然单位制中ℏ&#x3D;c&#x3D;1 \hbar &#x3D; c &#x3D; 1 ℏ&#x3D;c&#x3D;1  我们通常也有 ε0&#x3D;1 \varepsilon_0 &#x3D; 1 ε0​&#x3D;1  在自然单位制中，速度没有量纲；长度量纲与时间量纲相等，能量量纲是其倒数。质量，动量，能量具有相同量纲。  洛伦兹变换 我们取O和O′两个参考系，其中O′沿着O的x轴以速度β移动。其中β&#x3D;vc&#x3D;v我们取O和O&amp;#x">
+    <meta name="description" content="某不知名大专眼中的的QFT 从大二开始接触QFT有大约五个月了，从最开始的畏惧退缩到自以为是，再到推到重来重新学习，不能说大彻大悟，只不过感慨颇多。 或许是为了分享知识的喜悦，也可能是想记录我的求道之道，我这个对编程一窍不通的人开始了写自己的blog。(之前也试过manim动画啦，但是感觉效率好低哦)  自然单位制 在自然单位制中ℏ&#x3D;c&#x3D;1 \hbar &#x3D; c &#x3D; 1 ℏ&#x3D;c&#x3D;1  我们通常也有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="量子场论第一讲">
+<meta property="og:title" content="量子场论第一讲(删改中)">
 <meta property="og:url" content="http://example.com/2025/03/22/hello-world/index.html">
 <meta property="og:site_name" content="欢迎来到！我的思维殿堂！">
-<meta property="og:description" content="哥们开始写QFT的第一篇笔记  自然单位制 在自然单位制中ℏ&#x3D;c&#x3D;1 \hbar &#x3D; c &#x3D; 1 ℏ&#x3D;c&#x3D;1  我们通常也有 ε0&#x3D;1 \varepsilon_0 &#x3D; 1 ε0​&#x3D;1  在自然单位制中，速度没有量纲；长度量纲与时间量纲相等，能量量纲是其倒数。质量，动量，能量具有相同量纲。  洛伦兹变换 我们取O和O′两个参考系，其中O′沿着O的x轴以速度β移动。其中β&#x3D;vc&#x3D;v我们取O和O&amp;#x">
+<meta property="og:description" content="某不知名大专眼中的的QFT 从大二开始接触QFT有大约五个月了，从最开始的畏惧退缩到自以为是，再到推到重来重新学习，不能说大彻大悟，只不过感慨颇多。 或许是为了分享知识的喜悦，也可能是想记录我的求道之道，我这个对编程一窍不通的人开始了写自己的blog。(之前也试过manim动画啦，但是感觉效率好低哦)  自然单位制 在自然单位制中ℏ&#x3D;c&#x3D;1 \hbar &#x3D; c &#x3D; 1 ℏ&#x3D;c&#x3D;1  我们通常也有">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-21T17:54:44.803Z">
-<meta property="article:modified_time" content="2025-03-22T14:20:43.777Z">
+<meta property="article:modified_time" content="2025-03-22T14:32:11.339Z">
 <meta property="article:author" content="JD">
 <meta name="twitter:card" content="summary">
   
@@ -178,7 +178,7 @@
           
         </picture>
         
-          <img fetchpriority="high" src="/images/banner.webp" alt="量子场论第一讲">
+          <img fetchpriority="high" src="/images/banner.webp" alt="量子场论第一讲(删改中)">
         
       
     
@@ -189,7 +189,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">量子场论第一讲</h1>
+            <h1 data-aos="slide-up">量子场论第一讲(删改中)</h1>
           </a>
         
       
@@ -216,7 +216,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%93%A5%E4%BB%AC%E5%BC%80%E5%A7%8B%E5%86%99qft%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 哥们开始写QFT的第一篇笔记</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%8D%95%E4%BD%8D%E5%88%B6"><span class="toc-number"></span> <span class="toc-text"> 自然单位制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-number"></span> <span class="toc-text"> 洛伦兹变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text"> 经典场论</span></a>
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9F%90%E4%B8%8D%E7%9F%A5%E5%90%8D%E5%A4%A7%E4%B8%93%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%9A%84qft"><span class="toc-number">1.</span> <span class="toc-text"> 某不知名大专眼中的的QFT</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%8D%95%E4%BD%8D%E5%88%B6"><span class="toc-number"></span> <span class="toc-text"> 自然单位制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-number"></span> <span class="toc-text"> 洛伦兹变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text"> 经典场论</span></a>
       
   </div>
 </div>
@@ -319,7 +319,9 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <h6 id="哥们开始写qft的第一篇笔记"><a class="markdownIt-Anchor" href="#哥们开始写qft的第一篇笔记"></a> 哥们开始写QFT的第一篇笔记</h6>
+        <h6 id="某不知名大专眼中的的qft"><a class="markdownIt-Anchor" href="#某不知名大专眼中的的qft"></a> 某不知名大专眼中的的QFT</h6>
+<p>从大二开始接触QFT有大约五个月了，从最开始的畏惧退缩到自以为是，再到推到重来重新学习，不能说大彻大悟，只不过感慨颇多。<br />
+或许是为了分享知识的喜悦，也可能是想记录我的求道之道，我这个对编程一窍不通的人开始了写自己的blog。(之前也试过manim动画啦，但是感觉效率好低哦)</p>
 <h5 id="自然单位制"><a class="markdownIt-Anchor" href="#自然单位制"></a> 自然单位制</h5>
 <p>在自然单位制中<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">ℏ</mi><mo>=</mo><mi>c</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex"> \hbar = c = 1 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord">ℏ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
 <br />
@@ -475,7 +477,7 @@ l0,-1344c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
     
       <div>
         <span class="icon-brush"></span>
-        1k
+        1.1k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         00:05
@@ -511,7 +513,7 @@ l0,-1344c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%93%A5%E4%BB%AC%E5%BC%80%E5%A7%8B%E5%86%99qft%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 哥们开始写QFT的第一篇笔记</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%8D%95%E4%BD%8D%E5%88%B6"><span class="toc-number"></span> <span class="toc-text"> 自然单位制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-number"></span> <span class="toc-text"> 洛伦兹变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text"> 经典场论</span></a>
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9F%90%E4%B8%8D%E7%9F%A5%E5%90%8D%E5%A4%A7%E4%B8%93%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%9A%84qft"><span class="toc-number">1.</span> <span class="toc-text"> 某不知名大专眼中的的QFT</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%8D%95%E4%BD%8D%E5%88%B6"><span class="toc-number"></span> <span class="toc-text"> 自然单位制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-number"></span> <span class="toc-text"> 洛伦兹变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text"> 经典场论</span></a>
       
   </div>
 </div>
@@ -656,13 +658,13 @@ l0,-1344c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
       <script data-pjax>
         window.REIMU_POST = {
           author: "JD",
-          title: "量子场论第一讲",
+          title: "量子场论第一讲(删改中)",
           url: "http://example.com/2025/03/22/hello-world/",
           excerpt: "",
           description: "",
-          stripContent: " 哥们开始写QFT的第一篇笔记  自然单位制 在自然单位制中ℏ=c=1 \hbar = c = 1 ℏ=c=1  我们通常也有 ε0=1 \varepsilon_0 = 1 ε0​=1  在自然单位制中，速度没有量纲；长度量纲与时间量纲相等，能量量纲是其倒数。质量，动量，能量具有相同量纲。  洛伦兹变换 我们取O和O′两个参考系，其中O′沿着O的x轴以速度β移动。其中β=vc=v我们取O和O&amp;#x27;两个参考系，其中O&amp;#x27;沿着O的x轴以速度\beta移动。 其中\beta = \fra",
+          stripContent: " 某不知名大专眼中的的QFT 从大二开始接触QFT有大约五个月了，从最开始的畏惧退缩到自以为是，再到推到重来重新学习，不能说大彻大悟，只不过感慨颇多。 或许是为了分享知识的喜悦，也可能是想记录我的求道之道，我这个对编程一窍不通的人开始了写自己的blog。(之前也试过manim动画啦，但是感觉效率好低哦)  自然单位制 在自然单位制中ℏ=c=1 \hbar = c = 1 ℏ=c=1  我们通常也有 ε0=1 \varepsilon_0 = 1 ε0​=1  在自然单位制中，速度没有量纲；长度量纲",
           date: "Sat Mar 22 2025 01:54:44 GMT+0800",
-          updated: "Sat Mar 22 2025 22:20:43 GMT+0800",
+          updated: "Sat Mar 22 2025 22:32:11 GMT+0800",
           cover: "/images/banner.webp",
         };
       </script>
