@@ -2746,14 +2746,3 @@ pre .javascript .function {
   height: 2px;
   background: var(--red-1);
 }
-#header-avatar {
-  text-align: center;
-  margin-top: 10px;
-}
-#header-avatar img.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
