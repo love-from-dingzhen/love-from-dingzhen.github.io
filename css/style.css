@@ -542,19 +542,19 @@ body.blue-background {
   padding: 10px;
   border-left: 5px solid #a9d0f5;
 }
-.theme-dependent {
-  background-color: #fff4f4; /* 颜色 A - 适用于日间模式 */
-  color: #333; /* 文本颜色 */
+div.theme-dependent {
+  background-color: #fff4f4 !important;
+  color: #333 !important;
   padding: 10px;
-  border-left: 5px solid #ffc0cb;
+  border-left: 5px solid #ffc0cb !important;
   border-radius: 8px;
+  margin: 1.2em 0;
 }
-/* 当用户处于夜间模式时 */
 @media (prefers-color-scheme: dark) {
-  .theme-dependent {
-    background-color: #250101; /* 颜色 B - 适用于夜间模式 */
-    color: #fff; /* 让文本在夜间模式下可读 */
-    border-left: 5px solid #000;
+  div.theme-dependent {
+    background-color: #250101 !important;
+    color: #fff !important;
+    border-left: 5px solid #ffc0cb !important;
   }
 }
 a {
