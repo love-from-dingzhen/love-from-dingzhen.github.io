@@ -543,10 +543,10 @@ body.blue-background {
   border-left: 5px solid #a9d0f5;
 }
 .theme-dependent {
-  background-color: #e6f2ff; /* 颜色 A - 适用于日间模式 */
+  background-color: #fff4f4; /* 颜色 A - 适用于日间模式 */
   color: #333; /* 文本颜色 */
   padding: 10px;
-  border-left: 5px solid #a9d0f5;
+  border-left: 5px solid #ffc0cb;
   border-radius: 8px;
 }
 /* 当用户处于夜间模式时 */
