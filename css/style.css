@@ -550,13 +550,6 @@ div.theme-dependent {
   border-radius: 8px;
   margin: 1.2em 0;
 }
-@media (prefers-color-scheme: dark) {
-  div.theme-dependent {
-    background-color: #250101 !important;
-    color: #fff !important;
-    border-left: 5px solid #ffc0cb !important;
-  }
-}
 a {
   cursor: var(--cursor-pointer) !important;
 }
