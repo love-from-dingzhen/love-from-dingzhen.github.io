@@ -2872,3 +2872,34 @@ pre .javascript .function {
   height: 2px;
   background: var(--red-1);
 }
+.img-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  margin: 1.5em 0;
+}
+.img-item {
+  text-align: center;
+  width: 360px;
+}
+.img-box {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-box img {
+  max-width: 100%;
+  max-height: 130px;
+  height: auto;
+  display: block;
+}
+.img-item p {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: #666;
+}
+/* ==================================================
+   系统夜间模式：日间不变，夜间背景变暗、文字变亮
+   ================================================== */
