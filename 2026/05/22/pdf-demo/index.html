@@ -17,7 +17,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://example.com';</script>
   
   <title>
-    pdf-demo |
+    PDF 合并阅读 Demo |
     
     接受赞美是否意味着接受批判
   </title>
@@ -32,15 +32,15 @@
 
   
   
-    <meta name="description" content="下面这个区域会把 pdf1、pdf2、pdf3 按顺序连起来显示。         －     PDF 加载中...     ＋         .pdf-mini-viewer {   border: 1px solid #ddd;   border-radius: 12px;   overflow: hidden;   margin: 1.5rem 0;   background: #f6f6">
+    <meta name="description" content="我要成为电动力学高手！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pdf-demo">
+<meta property="og:title" content="PDF 合并阅读 Demo">
 <meta property="og:url" content="http://example.com/2026/05/22/pdf-demo/index.html">
 <meta property="og:site_name" content="接受赞美是否意味着接受批判">
-<meta property="og:description" content="下面这个区域会把 pdf1、pdf2、pdf3 按顺序连起来显示。         －     PDF 加载中...     ＋         .pdf-mini-viewer {   border: 1px solid #ddd;   border-radius: 12px;   overflow: hidden;   margin: 1.5rem 0;   background: #f6f6">
+<meta property="og:description" content="我要成为电动力学高手！">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-05-22T09:59:10.000Z">
-<meta property="article:modified_time" content="2026-05-22T10:00:20.479Z">
+<meta property="article:published_time" content="2026-05-22T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-22T10:37:42.228Z">
 <meta property="article:author" content="王子系爱好者">
 <meta name="twitter:card" content="summary">
   
@@ -185,11 +185,11 @@
             
               <source media="(min-width: 800px)" srcset="/images/banner.webp">
             
-            <img fetchpriority="high" src="/images/banner.webp" alt="pdf-demo">
+            <img fetchpriority="high" src="/images/banner.webp" alt="PDF 合并阅读 Demo">
           
         </picture>
         
-          <img src="" alt="pdf-demo" style="visibility: hidden;">
+          <img src="" alt="PDF 合并阅读 Demo" style="visibility: hidden;">
         
       
     
@@ -200,7 +200,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">pdf-demo</h1>
+            <h1 data-aos="slide-up">PDF 合并阅读 Demo</h1>
           </a>
         
       
@@ -316,7 +316,7 @@
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
-    <time datetime="2026-05-22T09:59:10.000Z" itemprop="datePublished">2026-05-22</time>
+    <time datetime="2026-05-22T04:00:00.000Z" itemprop="datePublished">2026-05-22</time>
     <time style="display: none;" id="post-update-time">2026-05-22</time>
   </span>
 </div>
@@ -330,35 +330,43 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <p>下面这个区域会把 pdf1、pdf2、pdf3 按顺序连起来显示。</p>
-<div class="pdf-mini-viewer">
+        <p>我要成为电动力学高手！</p>
+<span id="more"></span>
+<p>这个答案是jackson习题，是网上找的，我暂时拿它测试一下网页</p>
+<div
+  class="combined-pdf-viewer"
+  data-pdfs="/pdfs/pdf-demo/pdf1.pdf,/pdfs/pdf-demo/pdf2.pdf,/pdfs/pdf-demo/pdf3.pdf"
+>
   <div class="pdf-toolbar">
-    <button id="pdfZoomOut">－</button>
-    <span id="pdfStatus">PDF 加载中...</span>
-    <button id="pdfZoomIn">＋</button>
-  </div>
-  <div id="pdfPages" class="pdf-pages"></div>
+  <button class="pdf-zoom-out">－</button>
+  <span class="pdf-status">PDF 加载中...</span>
+  <button class="pdf-zoom-in">＋</button>
+  <button class="pdf-download">下载 PDF</button>
+</div>
+  <div class="pdf-pages"></div>
 </div>
 <style>
-.pdf-mini-viewer {
+.combined-pdf-viewer {
+  width: 100%;
+  height: 80vh;
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
+  background: #777;
   margin: 1.5rem 0;
-  background: #f6f6f6;
 }
 
 .pdf-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  height: 44px;
   display: flex;
   gap: 12px;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background: #fff;
+  background: #f8f8f8;
   border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .pdf-toolbar button {
@@ -367,144 +375,32 @@
 }
 
 .pdf-pages {
-  height: 75vh;
-  overflow: auto;
-  padding: 18px;
+  height: calc(80vh - 44px);
+  overflow-y: auto;
   text-align: center;
-}
-
-.pdf-doc-title {
-  margin: 18px auto 10px;
-  font-size: 14px;
-  opacity: 0.7;
+  padding: 24px 12px;
+  box-sizing: border-box;
 }
 
 .pdf-page-wrap {
-  margin: 0 auto 18px;
+  position: relative;
+  margin: 0 auto 20px;
 }
 
 .pdf-page {
   max-width: 100%;
   height: auto;
   background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.pdf-page-label {
+  font-size: 12px;
+  color: #eee;
+  margin-top: 6px;
 }
 </style>
-<script type="module">
-import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
-
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-  "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
-
-const pdfFiles = [
-  {
-    name: "pdf1",
-    url: ""
-  },
-  {
-    name: "pdf2",
-    url: ""
-  },
-  {
-    name: "pdf3",
-    url: ""
-  }
-];
-
-const pagesEl = document.getElementById("pdfPages");
-const statusEl = document.getElementById("pdfStatus");
-const zoomInEl = document.getElementById("pdfZoomIn");
-const zoomOutEl = document.getElementById("pdfZoomOut");
-
-let scale = 1.2;
-let loadedDocs = [];
-
-async function loadDocs() {
-  loadedDocs = [];
-
-  for (const file of pdfFiles) {
-    const loadingTask = pdfjsLib.getDocument({ url: file.url });
-    const pdf = await loadingTask.promise;
-
-    loadedDocs.push({
-      name: file.name,
-      pdf
-    });
-  }
-}
-
-async function renderAll() {
-  pagesEl.innerHTML = "";
-
-  const totalPages = loadedDocs.reduce((sum, item) => sum + item.pdf.numPages, 0);
-  let renderedPages = 0;
-
-  for (const item of loadedDocs) {
-    const title = document.createElement("div");
-    title.className = "pdf-doc-title";
-    title.textContent = `开始阅读：${item.name}`;
-    pagesEl.appendChild(title);
-
-    for (let pageNumber = 1; pageNumber <= item.pdf.numPages; pageNumber++) {
-      const page = await item.pdf.getPage(pageNumber);
-      const viewport = page.getViewport({ scale });
-
-      const outputScale = window.devicePixelRatio || 1;
-
-      const canvas = document.createElement("canvas");
-      canvas.className = "pdf-page";
-
-      const context = canvas.getContext("2d");
-
-      canvas.width = Math.floor(viewport.width * outputScale);
-      canvas.height = Math.floor(viewport.height * outputScale);
-      canvas.style.width = Math.floor(viewport.width) + "px";
-      canvas.style.height = Math.floor(viewport.height) + "px";
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "pdf-page-wrap";
-      wrapper.appendChild(canvas);
-      pagesEl.appendChild(wrapper);
-
-      await page.render({
-        canvasContext: context,
-        viewport,
-        transform: outputScale !== 1
-          ? [outputScale, 0, 0, outputScale, 0, 0]
-          : null
-      }).promise;
-
-      renderedPages++;
-      statusEl.textContent = `已渲染 ${renderedPages} / ${totalPages} 页`;
-    }
-  }
-
-  statusEl.textContent = `完成，共 ${totalPages} 页，当前缩放 ${Math.round(scale * 100)}%`;
-}
-
-async function startViewer() {
-  try {
-    statusEl.textContent = "PDF 加载中...";
-    await loadDocs();
-    await renderAll();
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = "PDF 加载失败，请检查文件名和路径。";
-  }
-}
-
-zoomInEl.addEventListener("click", async () => {
-  scale = Math.min(scale + 0.2, 3);
-  await renderAll();
-});
-
-zoomOutEl.addEventListener("click", async () => {
-  scale = Math.max(scale - 0.2, 0.6);
-  await renderAll();
-});
-
-startViewer();
-</script>
+<script type="module" src="/js/pdf-combine-viewer.js"></script>
       
     </div>
     <footer class="article-footer">
@@ -578,7 +474,7 @@ startViewer();
     
       <div>
         <span class="icon-brush"></span>
-        16.7k
+        16.5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         01:17
@@ -768,13 +664,13 @@ startViewer();
       <script data-pjax>
         window.REIMU_POST = {
           author: "王子系爱好者",
-          title: "pdf-demo",
+          title: "PDF 合并阅读 Demo",
           url: "http://example.com/2026/05/22/pdf-demo/",
-          excerpt: "",
+          excerpt: "我要成为电动力学高手！",
           description: "",
-          stripContent: "下面这个区域会把 pdf1、pdf2、pdf3 按顺序连起来显示。         －     PDF 加载中...     ＋         .pdf-mini-viewer {   border: 1px solid #ddd;   border-radius: 12px;   overflow: hidden;   margin: 1.5rem 0;   background: #f6f6f6; }  .pdf-toolbar {   position: sticky;   top: 0",
-          date: "Fri May 22 2026 17:59:10 GMT+0800",
-          updated: "Fri May 22 2026 18:00:20 GMT+0800",
+          stripContent: "我要成为电动力学高手！  这个答案是jackson习题，是网上找的，我暂时拿它测试一下网页       －   PDF 加载中...   ＋   下载 PDF       .combined-pdf-viewer {   width: 100%;   height: 80vh;   border: 1px solid #ddd;   border-radius: 12px;   overflow: hidden;   background: #777;   margin: 1.5rem 0; }",
+          date: "Fri May 22 2026 12:00:00 GMT+0800",
+          updated: "Fri May 22 2026 18:37:42 GMT+0800",
           cover: "/images/banner.webp",
         };
       </script>
